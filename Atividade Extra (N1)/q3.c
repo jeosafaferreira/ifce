@@ -22,9 +22,8 @@ int main(void) {
     printf("Erro ao abrir arquivo.");
   }
   fclose(arq);
-  
-	//Realizando contagem
-	int total;
+  //Realizando contagem
+  int total;
   for(int k=0; texto[k] != '\0';k++){
     if(texto[k] == c)
 			total++;
