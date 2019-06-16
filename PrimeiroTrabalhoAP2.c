@@ -49,4 +49,8 @@ int main(){
 		}
 		fclose(arq);
 	}
+	
+	//Não consegui implementar o código para contar as palavras :'(
+	
+	
 }
