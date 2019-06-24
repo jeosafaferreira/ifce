@@ -11,6 +11,8 @@ Para calcular a mediana, e necess ́ario que o vetor esteja ordenado.
 Logo, implemente tamb ́em uma fun ̧c ̃ao que ordene o vetor e chame-o antes de calcular a mediana 
 (procure os pseudoc ́odigos do insertion sort ou bubble sort ou tente desenvolver uma l ́ogica pr ́opria).
 */
+int media();
+int moda();
 
 int main(void) {
   //Criando vetor
@@ -19,4 +21,30 @@ int main(void) {
   for(int i=0;i<101;i++){
     vetor[i] = 1 + rand() % 499;
   }
+  printf("Média: %d\n", media(vetor));
+  printf("Moda: %d\n", moda(vetor));
+
+}
+
+int media(int vetor[]){
+  int soma;
+  for(int i=0;i<101;i++){
+    soma += vetor[i];
+  }
+  return soma/101;
+}
+
+int moda(int vetor[]){
+  
+  int map[500] = {0}, moda = 0;
+  for(int i=0;i<101;i++){
+    map[vetor[i]]++;
+  }
+
+  //buscando o mais repetido
+  for(int i=0;i<501;i++){
+    if(map[i]> moda)
+      moda = map[i];
+  }
+  return moda;
 }
