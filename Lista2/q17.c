@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 int main(void) {
+  #q17
   int boneco = 0;
   int grupos;
   int comandos;
