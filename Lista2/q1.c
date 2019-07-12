@@ -26,9 +26,13 @@ int main(void) {
     vetor[i] = 1 + rand() % 499;
     printf("%d,", vetor[i]);
   }
-  printf("\n-------------------------------------\n");
-  printf("Média: %d\n", media(vetor));
-  printf("Moda: %d\n", moda(vetor));
+  printf("\n==============================================\n");
+  printf("MÉDIA: %d\n", media(vetor));
+  printf("==============================================\n");
+  printf("MODA: %d\n", moda(vetor));
+  printf("==============================================");
+  printf("MEDIANA: %d", mediana(vetor));
+  printf("\n==============================================\n");
 
 }
 
@@ -64,5 +68,22 @@ int moda(int vetor[]){
 }
 
 int mediana(int vetor[]){
-  
+  int escolhido, j, i;
+  for (int i = 1; i < 101; i++) {
+		escolhido = vetor[i];
+		j = i - 1;
+		
+		while ((j >= 0) && (vetor[j] > escolhido)) {
+			vetor[j + 1] = vetor[j];
+			j--;
+		}
+		
+		vetor[j + 1] = escolhido;
+	}
+  printf("\nNúmeros ordenados:\n");
+  for(int i=0; i<101;i++){
+    printf("%d, ", vetor[i]);
+  }
+  printf("\n\n");
+  return vetor[50];
 }
